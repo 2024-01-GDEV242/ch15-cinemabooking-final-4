@@ -13,7 +13,6 @@ public class CinemaBookingSystem
      */
     public CinemaBookingSystem()
     {
-        // initialise instance variables
         
     }
 
