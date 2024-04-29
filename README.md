@@ -1,4 +1,6 @@
 # Cinema-Project
- 
-## Developers
-- Juan Jimenez
+
+## 
+-Alper Hiz 
+-Juan Jimenez
+-Christopher Compierchio
