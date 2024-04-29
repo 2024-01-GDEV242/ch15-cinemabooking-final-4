@@ -1,9 +1,7 @@
 
 /**
- * Write a description of class CinemaBookingSystem here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * This is the main class that integrates all other classes and functionalities. It could 
+ * handle tasks like adding theaters, scheduling shows, and processing bookings.
  */
 public class CinemaBookingSystem
 {
