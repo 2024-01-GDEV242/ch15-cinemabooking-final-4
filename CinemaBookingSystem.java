@@ -6,7 +6,7 @@
 public class CinemaBookingSystem
 {
     // instance variables - replace the example below with your own
-    //test
+    
 
     /**
      * Constructor for objects of class CinemaBookingSystem
