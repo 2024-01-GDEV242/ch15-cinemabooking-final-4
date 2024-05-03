@@ -1,33 +1,27 @@
+import java.util.Calendar;
 
 /**
  * Represents a movie showing at a specific time in a specific theater.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Jimenez
+ * @version 4/29/24
  */
 public class Show
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private String movieTitle;
+    private Calendar showTime;
+    private Theater theater;
+    
     /**
-     * Constructor for objects of class Show
+     * Constructs a show with a title, time, and theater.
+     * 
+     * @param title The movie title
+     * @param time The time of the show
+     * @param theater The theater where the show will take place
      */
-    public Show()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public Show(String title, Calendar time, Theater theater) {
+        this.movieTitle = title;
+        this.showTime = time;
+        this.theater = theater;
     }
 }

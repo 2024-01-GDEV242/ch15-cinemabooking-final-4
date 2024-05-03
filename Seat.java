@@ -1,21 +1,29 @@
 
 /**
- * This class represents a single seat.
+ * The class represents a single seat.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Jimenez
+ * @version 4/29/24
  */
 public class Seat
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private int seatNumber;
+    private boolean isBooked;
+    
     /**
-     * Constructor for objects of class seat
+     * Constructs a seat with a seat number.
+     * 
+     * @param seatNumber The seat number
      */
-    public Seat()
-    {
-        // initialise instance variables
-        x = 0;
+    public Seat(int seatNumber) {
+        this.seatNumber = seatNumber;
+        this.isBooked = false;
+    }
+    
+    /**
+     * Books the seat.
+     */
+    public void bookSeat() {
+        this.isBooked = true;
     }
 }

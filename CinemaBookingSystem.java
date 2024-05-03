@@ -1,13 +1,17 @@
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * This is the main class that integrates all other classes and functionalities. It could 
  * handle tasks like adding theaters, scheduling shows, and processing bookings.
+ * 
+ * @author Juan jimenez
+ * @version 4/29/24
  */
 public class CinemaBookingSystem
 {
-    // instance variables - replace the example below with your own
-    //test
-
+    private List<Theater> theaters = new ArrayList<>();
+    private List<Booking> bookings = new ArrayList<>();
     /**
      * Constructor for objects of class CinemaBookingSystem
      */
@@ -15,15 +19,13 @@ public class CinemaBookingSystem
     {
         
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Adds a theater to the system.
+     * 
+     * @param theater The theater to add
      */
-    // public int sampleMethod(int y)
-    // {
-
-    // }
+    public void addTheater(Theater theater) {
+        theaters.add(theater);
+    }
 }

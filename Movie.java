@@ -1,13 +1,12 @@
 
 /**
- * A simple class that might store details about a movie.
+ * A class that stores seating details relating to a movie.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Jimenez
+ * @version 4/29/24
  */
 public class Movie
 {
-    // instance variables - replace the example below with your own
     private int x;
 
     /**

@@ -1,33 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Each row would be part of a theater and consist of several seats.
+ * The class has each row that is apart of a theater and has several seats.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Jimenez
+ * @version 4/29/24
  */
 public class Row
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private int rowNumber;
+    private List<Seat> seats = new ArrayList<>();
 
     /**
-     * Constructor for objects of class Row
+     * Constructs a row with number of seats.
+     * 
+     * @param rowNumber The row number
+     * @param numSeats The number of seats in the row
      */
-    public Row()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public Row(int rowNumber, int numSeats) {
+        this.rowNumber = rowNumber;
+        for (int i = 0; i < numSeats; i++) {
+            seats.add(new Seat(i));
+        }
     }
 }

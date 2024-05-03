@@ -1,20 +1,27 @@
+import java.util.List;
 
 /**
- * Represents a customer's booking.
+ * The class represents a customer's booking.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Jimenez
+ * @version 4/29/24
  */
 public class Booking
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private Show show;
+    private List<Seat> seats;
+    private Customer customer;
+    
     /**
-     * Constructor for objects of class Booking
+     * Constructs a booking with show, seats, and customer.
+     * 
+     * @param show The show to be booked
+     * @param seats The seats reserved for the booking
+     * @param customer The customer making the booking
      */
-    public Booking()
-    {
-        
+    public Booking(Show show, List<Seat> seats, Customer customer) {
+        this.show = show;
+        this.seats = seats;
+        this.customer = customer;
     }
 }

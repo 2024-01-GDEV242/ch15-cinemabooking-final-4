@@ -1,33 +1,23 @@
 
 /**
- *This class can store customer details.
+ * The class that store's customer details.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Juan Jimenez
+ * @version 4/29/24
  */
 public class Customer
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private String name;
+    private String phoneNumber;
+    
     /**
-     * Constructor for objects of class Customer
+     * Constructs a customer with a name and phone number.
+     * 
+     * @param name The customer's name
+     * @param phoneNumber The customer's phone number
      */
-    public Customer()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public Customer(String name, String phoneNumber) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
     }
 }
