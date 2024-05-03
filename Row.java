@@ -24,4 +24,13 @@ public class Row
             seats.add(new Seat(i));
         }
     }
+    
+    /**
+     * Gets all seats in the row.
+     * 
+     * @return A list of seats
+     */
+    public List<Seat> getSeats() {
+        return seats;
+    }
 }

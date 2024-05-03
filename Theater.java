@@ -12,7 +12,8 @@ public class Theater
 {
     private int theaterId;
     private List<Row> rows = new ArrayList<>();
-    
+    private List<Show> shows = new ArrayList<>();
+
     /**
      * Constructs a theater with a number of rows and seats per row.
      * 
@@ -26,4 +27,32 @@ public class Theater
             rows.add(new Row(i, seatsPerRow));
         }
     }
+    
+    /**
+     * Schedules a new show in the theater.
+     *
+     * @param show The show to add
+     */
+    public void scheduleShow(Show show) {
+        shows.add(show);
+    }
+    
+    /**
+     * Gets all shows scheduled in the theater.
+     * 
+     * @return A list of the shows
+     */
+    public List<Show> getShows() {
+        return shows;
+    }
+    
+     /**
+     * Gets all rows in the theater.
+     * 
+     * @return A list of rows
+     */
+    public List<Row> getRows() {
+        return rows;
+    }
 }
+

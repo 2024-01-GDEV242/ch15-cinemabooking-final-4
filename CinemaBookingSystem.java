@@ -28,4 +28,60 @@ public class CinemaBookingSystem
     public void addTheater(Theater theater) {
         theaters.add(theater);
     }
+    
+    /**
+     * Handles the booking for seats for a showing.
+     *
+     * @param showId The showing identifier
+     * @param rowNumber The row number where the seat is located
+     * @param seatNumbers A list of seat numbers to be booked
+     * @param customer The customer who is booking the seats
+     * @return true if the booking is successful
+     */
+    public boolean bookSeats(int showId, int rowNumber, List<Integer> seatNumbers, Customer customer) {
+        for (Theater theater : theaters) {
+            for (Show show : theater.getShows()) {
+                if (show.getShowId() == showId) {
+                    return show.bookSeats(rowNumber, seatNumbers, customer);
+                }
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * Finds shows by movie title.
+     *
+     * @param title The movie title to search for
+     * @return A list of shows with the given title
+     */
+    public List<Show> findShowsByTitle(String title) {
+        List<Show> matchedShows = new ArrayList<>();
+        for (Theater theater : theaters) {
+            for (Show show : theater.getShows()) {
+                if (show.getMovieTitle().equalsIgnoreCase(title)) {
+                    matchedShows.add(show);
+                }
+            }
+        }
+        return matchedShows;
+    }
+
+    /**
+     * Checks available seats for a specific show.
+     *
+     * @param showId The show identifier
+     * @return A list of available seats
+     */
+    public List<Seat> getAvailableSeats(int showId) {
+        for (Theater theater : theaters) {
+            for (Show show : theater.getShows()) {
+                if (show.getShowId() == showId) {
+                    return show.getAvailableSeats();
+                }
+            }
+        }
+        return new ArrayList<>();
+    }
 }
+

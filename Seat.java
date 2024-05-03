@@ -26,4 +26,14 @@ public class Seat
     public void bookSeat() {
         this.isBooked = true;
     }
+    
+    /**
+     * Checks if the seat is already booked.
+     * 
+     * @return true if the seat is booked
+     */
+    public boolean isBooked() {
+        return isBooked;
+    }
 }
+
