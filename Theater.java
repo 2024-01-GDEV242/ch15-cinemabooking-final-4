@@ -54,5 +54,19 @@ public class Theater
     public List<Row> getRows() {
         return rows;
     }
+    
+    /**
+     * Returns a string representation of the theater.
+     * 
+     * @return A string representation of the theater
+     */
+    @Override
+    public String toString() {
+        return "Theater{" +
+                "theaterId=" + theaterId +
+                ", rows=" + rows +
+                ", shows=" + shows +
+                '}';
+    }    
 }
 
