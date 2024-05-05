@@ -106,7 +106,7 @@ public class Date {
         StringBuffer buffer = new StringBuffer();
         for (int value : dateShowing) {
             if (value < 10) {
-                buffer.append("0" + value);
+                buffer.append("0").append(value);
             } else {
                 buffer.append(value);
             }
