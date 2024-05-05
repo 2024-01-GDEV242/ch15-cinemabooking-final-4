@@ -64,6 +64,6 @@ public class Row
                 ", seats=" + seats +
                 '}';
     }
-}    
+    
     
 }
