@@ -76,5 +76,17 @@ public class Movie {
         this.genre = genre;
     }
 
-
+    /**
+     * Returns a string representation of the movie.
+     * 
+     * @return A string representation of the movie
+     */
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", director='" + director + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
+    }
 }
