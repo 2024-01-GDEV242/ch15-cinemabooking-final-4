@@ -83,5 +83,47 @@ public class CinemaBookingSystem
         }
         return new ArrayList<>();
     }
+    
+    /**
+     * Schedules a new show in the theater.
+     * 
+     * @param theater The theater where the show will take place
+     * @param show    The show to add
+     */
+    public void scheduleShow(Theater theater, Show show) {
+        theater.scheduleShow(show);
+    }
+
+    /**
+     * Gets all theaters in the system.
+     * 
+     * @return A list of theaters
+     */
+    public List<Theater> getTheaters() {
+        return theaters;
+    }
+
+    /**
+     * Gets all bookings in the system.
+     * 
+     * @return A list of bookings
+     */
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    /**
+     * Returns a string representation of the CinemaBookingSystem object.
+     * 
+     * @return A string representation of the CinemaBookingSystem object
+     */
+    @Override
+    public String toString() {
+        return "CinemaBookingSystem{" +
+                "theaters=" + theaters +
+                ", bookings=" + bookings +
+                '}';
+    }    
+    
 }
 
