@@ -27,6 +27,27 @@ public class Row
     }
     
     /**
+     * Books seats in the row.
+     * 
+     * @param seatNumbers The seat numbers to book
+     * @return true if all seats were successfully booked, false otherwise
+     */
+    public boolean bookSeats(List<Integer> seatNumbers) {
+        boolean allBooked = true;
+        for (int seatNum : seatNumbers) {
+            if (seatNum <= seats.size()) {
+                Seat seat = seats.get(seatNum - 1);
+                if (!seat.bookSeat()) {
+                    allBooked = false;
+                }
+            } else {
+                allBooked = false;
+            }
+        }
+        return allBooked;
+    }    
+    
+    /**
      * Gets all seats in the row.
      * 
      * @return A list of seats
