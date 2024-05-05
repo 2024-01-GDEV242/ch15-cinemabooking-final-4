@@ -13,15 +13,16 @@ public class Row
     private List<Seat> seats = new ArrayList<>();
 
     /**
-     * Constructs a row with number of seats.
+     * Constructs a row with the given row number and number of seats.
      * 
      * @param rowNumber The row number
      * @param numSeats The number of seats in the row
      */
     public Row(int rowNumber, int numSeats) {
         this.rowNumber = rowNumber;
+        this.seats = new ArrayList<>();
         for (int i = 0; i < numSeats; i++) {
-            seats.add(new Seat(i));
+            seats.add(new Seat(i + 1)); // Seat numbers start from 1
         }
     }
     
