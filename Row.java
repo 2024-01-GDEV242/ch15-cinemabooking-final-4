@@ -33,4 +33,37 @@ public class Row
     public List<Seat> getSeats() {
         return seats;
     }
+    
+    /**
+     * Gets the row number.
+     * 
+     * @return The row number
+     */
+    public int getRowNumber() {
+        return rowNumber;
+    }
+
+    /**
+     * Sets the seats for the row.
+     * 
+     * @param seats The list of seats to set
+     */
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
+    }
+
+    /**
+     * Returns a string representation of the row.
+     * 
+     * @return A string representation of the row
+     */
+    @Override
+    public String toString() {
+        return "Row{" +
+                "rowNumber=" + rowNumber +
+                ", seats=" + seats +
+                '}';
+    }
+}    
+    
 }
