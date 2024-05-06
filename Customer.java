@@ -1,33 +1,72 @@
 
 /**
- *This class can store customer details.
+ * The class that store's customer details.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Alper Hiz & Juan Jimenez
+ * @version 4/29/24
  */
 public class Customer
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private String name;
+    private String phoneNumber;
+    
     /**
-     * Constructor for objects of class Customer
+     * Constructs a customer with a name and phone number.
+     * 
+     * @param name The customer's name
+     * @param phoneNumber The customer's phone number
      */
-    public Customer()
-    {
-        // initialise instance variables
-        x = 0;
+    public Customer(String name, String phoneNumber) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+    }
+    
+    /**
+     * Gets the customer's name.
+     * 
+     * @return The customer's name
+     */
+    public String getName() {
+        return name;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Sets the customer's name.
+     * 
+     * @param name The customer's name to set
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Gets the customer's phone number.
+     * 
+     * @return The customer's phone number
+     */
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    /**
+     * Sets the customer's phone number.
+     * 
+     * @param phoneNumber The customer's phone number to set
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * Returns a string representation of the customer.
+     * 
+     * @return A string representation of the customer
+     */
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
 }

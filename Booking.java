@@ -1,33 +1,95 @@
+import java.util.List;
 
 /**
- * Represents a customer's booking.
+ * The class represents a customer's booking.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Alper Hiz & Juan Jimenez
+ * @version 4/29/24
  */
 public class Booking
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private Show show;
+    private List<Seat> seats;
+    private Customer customer;
+    
     /**
-     * Constructor for objects of class Booking
+     * Constructs a booking with show, seats, and customer.
+     * 
+     * @param show The show to be booked
+     * @param seats The seats reserved for the booking
+     * @param customer The customer making the booking
      */
-    public Booking()
-    {
-        // initialise instance variables
-        x = 0;
+    public Booking(Show show, List<Seat> seats, Customer customer) {
+        this.show = show;
+        this.seats = seats;
+        this.customer = customer;
+    }
+    
+    /**
+     * Gets the show for which the booking is made.
+     * 
+     * @return The show
+     */
+    public Show getShow() {
+        return show;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Sets the show for the booking.
+     * 
+     * @param show The show to set
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void setShow(Show show) {
+        this.show = show;
+    }
+
+    /**
+     * Gets the list of seats booked in the booking.
+     * 
+     * @return The list of seats
+     */
+    public List<Seat> getSeats() {
+        return seats;
+    }
+
+    /**
+     * Sets the list of seats for the booking.
+     * 
+     * @param seats The list of seats to set
+     */
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
+    }
+
+    /**
+     * Gets the customer who made the booking.
+     * 
+     * @return The customer
+     */
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    /**
+     * Sets the customer for the booking.
+     * 
+     * @param customer The customer to set
+     */
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    /**
+     * Returns a string representation of the booking.
+     * 
+     * @return A string representation of the booking
+     */
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "show=" + show +
+                ", seats=" + seats +
+                ", customer=" + customer +
+                '}';
     }
 }

@@ -1,33 +1,89 @@
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Each row would be part of a theater and consist of several seats.
+ * The class has each row that is apart of a theater and has several seats.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Alper Hiz & Juan Jimenez
+ * @version 4/29/24
  */
 public class Row
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private int rowNumber;
+    private List<Seat> seats = new ArrayList<>();
 
     /**
-     * Constructor for objects of class Row
+     * Constructs a row with number of seats.
+     * 
+     * @param rowNumber The row number
+     * @param numSeats The number of seats in the row
      */
-    public Row()
-    {
-        // initialise instance variables
-        x = 0;
+    public Row(int rowNumber, int numSeats) {
+        this.rowNumber = rowNumber;
+        this.seats = new ArrayList<>();
+        for (int i = 0; i < numSeats; i++) {
+            seats.add(new Seat(i + 1));
+        }
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Books seats in the row.
+     * 
+     * @param seatNumbers The seat numbers to book
+     * @return true if all seats were successfully booked, false otherwise
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public boolean bookSeats(List<Integer> seatNumbers) {
+        boolean allBooked = true;
+        for (int seatNum : seatNumbers) {
+            if (seatNum <= seats.size()) {
+                Seat seat = seats.get(seatNum - 1);
+                if (!seat.bookSeat()) {
+                    allBooked = false;
+                }
+            } else {
+                allBooked = false;
+            }
+        }
+        return allBooked;
+    }
+
+    /**
+     * Gets all seats in the row.
+     * 
+     * @return A list of seats
+     */
+    public List<Seat> getSeats() {
+        return seats;
+    }
+
+    /**
+     * Gets the row number.
+     * 
+     * @return The row number
+     */
+    public int getRowNumber() {
+        return rowNumber;
+    }
+
+    /**
+     * Sets the seats for the row.
+     * 
+     * @param seats The list of seats to set
+     */
+    public void setSeats(List<Seat> seats) {
+        this.seats = seats;
+    }
+
+    /**
+     * Returns a string representation of the row.
+     * 
+     * @return A string representation of the row
+     */
+    @Override
+    public String toString() {
+        return "Row{" +
+                "rowNumber=" + rowNumber +
+                ", seats=" + seats +
+                '}';
     }
 }
