@@ -5,7 +5,7 @@ import java.util.List;
  * The class represents a single theater within the cinema complex. Each theater will have 
  * multiple rows of seats.
  * 
- * @author Juan Jimenez
+ * @author Alper Hiz & Juan Jimenez
  * @version 4/29/24
  */
 public class Theater
@@ -26,6 +26,15 @@ public class Theater
         for (int i = 0; i < numberOfRows; i++) {
             rows.add(new Row(i, seatsPerRow));
         }
+    }
+    
+     /**
+     * Gets the ID of the theater.
+     * 
+     * @return The theater ID
+     */
+    public int getTheaterId() {
+        return theaterId;
     }
     
     /**
@@ -54,5 +63,18 @@ public class Theater
     public List<Row> getRows() {
         return rows;
     }
+    
+    /**
+     * Returns a string representation of the theater.
+     * 
+     * @return A string representation of the theater
+     */
+    @Override
+    public String toString() {
+        return "Theater{" +
+                "theaterId=" + theaterId +
+                ", rows=" + rows +
+                ", shows=" + shows +
+                '}';
+    }
 }
-

@@ -42,6 +42,40 @@ public class Show
     }
 
     /**
+     * Finds adjacent seats in the theater for this show.
+     * 
+     * @param numSeats The number of adjacent seats required
+     * @return A list of adjacent seats if found
+     */
+    public List<Seat> findAdjacentSeats(int numSeats) {
+        List<Seat> adjacentSeats = new ArrayList<>();
+        
+        for (Row row : theater.getRows()) {
+            List<Seat> seats = row.getSeats();
+            for (int i = 0; i <= seats.size() - numSeats; i++) {
+                boolean allAvailable = true;
+                List<Seat> potentialSeats = new ArrayList<>();
+                
+                for (int i2 = 0; i2 < numSeats; i2++) {
+                    Seat seat = seats.get(i + i2);
+                    if (seat.isBooked()) {
+                        allAvailable = false;
+                        break;
+                    }
+                    potentialSeats.add(seat);
+                }
+                
+                if (allAvailable) {
+                    adjacentSeats = potentialSeats;
+                    return adjacentSeats;
+                }
+            }
+        }
+        
+        return adjacentSeats;
+    }
+    
+    /**
      * Gets the title of the movie for the show.
      * 
      * @return The movie title
@@ -58,18 +92,19 @@ public class Show
      * @param customer The customer who is booking the seats
      * @return true if all seats could be booked
      */
-    public boolean bookSeats(int rowNumber, List<Integer> seatNumbers, Customer customer) {
-        Row row = theater.getRows().get(rowNumber);
-        boolean allBooked = true;
+     public List<Seat> bookSeats(int rowNumber, List<Integer> seatNumbers, Customer customer) {
+        Row row = theater.getRows().get(rowNumber - 1);
+        List<Seat> bookedSeats = new ArrayList<>();
+
         for (int seatNum : seatNumbers) {
-            Seat seat = row.getSeats().get(seatNum);
+            Seat seat = row.getSeats().get(seatNum - 1);
             if (!seat.isBooked()) {
                 seat.bookSeat();
-            } else {
-                allBooked = false;
+                bookedSeats.add(seat);
             }
         }
-        return allBooked;
+
+        return bookedSeats;
     }
     
     /**
