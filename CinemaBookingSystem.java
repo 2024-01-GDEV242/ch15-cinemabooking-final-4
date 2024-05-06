@@ -11,10 +11,12 @@ import java.util.Iterator;
  * @author Alper Hiz & Juan jimenez
  * @version 4/29/24
  */
+
 public class CinemaBookingSystem {
     private List<Theater> theaters = new ArrayList<>();
     private List<Booking> bookings = new ArrayList<>();
     private List<Movie> movies = new ArrayList<>();
+
 
     /**
      * Constructor for objects of class CinemaBookingSystem
